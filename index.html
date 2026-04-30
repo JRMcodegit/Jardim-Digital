@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html langpt-BR>
+<head>
+    <meta charset=&quot;UTF-8&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;>
+    <title>Jardim Digital 💐</title>
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+    <link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>
+    <link href=&quot;https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap&quot; rel=&quot;stylesheet&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;>
+</head>
+<body>
+    <div class=&quot;sky&quot;>
+        <div class=&quot;stars&quot; id=&quot;stars&quot;></div>
+        <div class=&quot;sun&quot;></div>
+        <div class=&quot;horizon&quot;></div>
+    </div>
+    
+    <div class=&quot;container&quot;>
+        <header class=&quot;intro&quot; id=&quot;intro&quot;>
+            <div class=&quot;intro-content&quot;>
+                <p class=&quot;intro-text&quot;>affs, abre esse presente aí</p>
+                <button class=&quot;btn-enter&quot; id=&quot;btnEnter&quot;>→</button>
+            </div>
+        </header>
+
+        <main class=&quot;garden&quot; id=&quot;garden&quot; style=&quot;display: none;&quot;>
+            <div class=&quot;garden-header&quot;>
+                <p class=&quot;garden-intro&quot;>sei lá, cada rosa dessas tem algo pra tu</p>
+                <p class=&quot;flower-count&quot;><span id=&quot;clickedCount&quot;>0</span>/11 clicadas</p>
+            </div>
+            
+            <div class=&quot;flowers-container&quot; id=&quot;flowersContainer&quot;></div>
+            
+            <div class=&quot;final-message&quot; id=&quot;finalMessage&quot; style=&quot;display: none;&quot;>
+                <div class=&quot;message-card&quot;>
+                    <p class=&quot;message-text&quot;>Fiz esse site porque tu tava mal esses dias, e hoje me disse que ficou triste. Espero que esse presentinho resolva 💐</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <audio id=&quot;bgMusic&quot; loop>
+        <source src=&quot;solitude.mp3&quot; type=&quot;audio/mpeg&quot;>
+    </audio>
+
+    <div class=&quot;music-hint&quot; id=&quot;musicHint&quot; style=&quot;display: none;&quot;>
+        <span>tá tocando algo suave aí ✨</span>
+    </div>
+
+    <script src=&quot;script.js&quot;></script>
+</body>
+</html>

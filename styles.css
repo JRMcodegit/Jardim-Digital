@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, 
+        #1a1a3e 0%, 
+        #2d3a5c 20%, 
+        #4a5a7c 40%, 
+        #7a8aac 60%, 
+        #c4a4b4 80%, 
+        #e8c4c4 95%,
+        #f4d4d4 100%
+    );
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sky Elements */
+.sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.sun {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, 
+        rgba(255, 200, 150, 0.9) 0%, 
+        rgba(255, 180, 130, 0.6) 40%, 
+        rgba(255, 160, 120, 0) 70%
+    );
+    border-radius: 50%;
+    animation: sunGlow 4s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+    50% { transform: translateX(-50%) scale(1.1); opacity: 1; }
+}
+
+.horizon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(180deg, 
+        rgba(230, 190, 180, 0.3) 0%, 
+        rgba(200, 160, 150, 0.5) 50%,
+        rgba(180, 140, 130, 0.7) 100%
+    );
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Intro Screen */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-enter {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-enter:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Garden Screen */
+.garden {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.garden-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.garden-intro {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.flower-count {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Flowers Grid */
+.flowers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flower Card */
+.flower {
+    position: relative;
+    width: 90px;
+    height: 130px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px) rotate(0deg);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.flower.visible {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+    animation: float 4s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.flower.clicked {
+    animation: none;
+    transform: scale(1.05);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* Flower SVG Styling */
+.flower-stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(180deg, #5a8a5a 0%, #4a7a4a 100%);
+    border-radius: 2px;
+}
+
+.flower-leaf {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: #5a8a5a;
+    border-radius: 50% 50% 50% 0;
+    transform-origin: left center;
+}
+
+.flower-leaf.left {
+    left: calc(50% - 20px);
+    bottom: 35px;
+    transform: rotate(-30deg);
+}
+
+.flower-leaf.right {
+    left: calc(50% + 2px);
+    bottom: 45px;
+    transform: rotate(30deg) scaleX(-1);
+}
+
+.flower-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+}
+
+.flower-name {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Petals */
+.petal {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background: linear-gradient(180deg, 
+        rgba(255, 100, 130, 0.9) 0%, 
+        rgba(255, 150, 170, 0.8) 100%
+    );
+    border-radius: 50% 50% 50% 50%;
+    transform-origin: center bottom;
+    box-shadow: 
+        inset 0 -5px 10px rgba(255, 255, 255, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-8px); }
+.petal:nth-child(2) { transform: rotate(45deg) translateY(-8px); }
+.petal:nth-child(3) { transform: rotate(90deg) translateY(-8px); }
+.petal:nth-child(4) { transform: rotate(135deg) translateY(-8px); }
+.petal:nth-child(5) { transform: rotate(180deg) translateY(-8px); }
+.petal:nth-child(6) { transform: rotate(225deg) translateY(-8px); }
+.petal:nth-child(7) { transform: rotate(270deg) translateY(-8px); }
+.petal:nth-child(8) { transform: rotate(315deg) translateY(-8px); }
+
+.flower.clicked .petal {
+    transform: rotate(var(--base-rotation)) translateY(-12px) scale(1.1);
+}
+
+.flower.clicked .petal:nth-child(1) { --base-rotation: 0deg; }
+.flower.clicked .petal:nth-child(2) { --base-rotation: 45deg; }
+.flower.clicked .petal:nth-child(3) { --base-rotation: 90deg; }
+.flower.clicked .petal:nth-child(4) { --base-rotation: 135deg; }
+.flower.clicked .petal:nth-child(5) { --base-rotation: 180deg; }
+.flower.clicked .petal:nth-child(6) { --base-rotation: 225deg; }
+.flower.clicked .petal:nth-child(7) { --base-rotation: 270deg; }
+.flower.clicked .petal:nth-child(8) { --base-rotation: 315deg; }
+
+/* Center of flower */
+.flower-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, 
+        #ffd700 0%, 
+        #ffb347 50%, 
+        #ff8c00 100%
+    );
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 -2px 5px rgba(0, 0, 0, 0.2),
+        0 0 10px rgba(255, 200, 100, 0.5);
+    z-index: 2;
+}
+
+/* Message Modal */
+.message-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.message-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-content {
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(245, 235, 235, 0.95) 100%
+    );
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 300px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.8) translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(255, 180, 200, 0.3);
+}
+
+.message-modal.show .message-content {
+    transform: scale(1) translateY(0);
+}
+
+.message-flower-name {
+    font-size: 1rem;
+    color: #e85a7a;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.message-flower-name::before,
+.message-flower-name::after {
+    content: '🌸';
+    font-size: 0.8rem;
+}
+
+.message-text {
+    font-size: 1rem;
+    color: #4a4a5a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-close {
+    background: linear-gradient(135deg, #e85a7a 0%, #d44a6a 100%);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+.btn-close:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(232, 90, 122, 0.4);
+}
+
+/* Final Message */
+.final-message {
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.message-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.message-text {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Music Hint */
+.music-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    z-index: 50;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Progress indicator */
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.progress-dot.filled {
+    background: #ff6b8a;
+    box-shadow: 0 0 10px rgba(255, 107, 138, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .flowers-container {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .flower {
+        width: 80px;
+        height: 120px;
+    }
+    
+    .flower-head {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .petal {
+        width: 22px;
+        height: 32px;
+    }
+    
+    .flower-name {
+        font-size: 0.6rem;
+    }
+    
+    .message-content {
+        padding: 25px 20px;
+    }
+}
