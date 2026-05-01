@@ -37,7 +37,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor\nda Força',
-    message: 'Sua força não grita. Só está lá, sempre.',
+    message: 'Quando eu falo da tua força, não é só sobre o teu corpo, é sobre tudo que tu sustenta diariamente. A tua forma de enfrentar a vida, de continuar mesmo no caos, me inspira de verdade. Tu é um exemplo vivo de resiliência pra mim.',
     p: '#7e22ce', d: '#3b0764', l: '#e9d5ff'
   },
   {
