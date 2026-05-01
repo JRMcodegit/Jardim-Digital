@@ -16,8 +16,8 @@ const FLOWERS = [
     p: '#d63384', d: '#7a0034', l: '#f9a8c9'
   },
   {
-    name:    'Flor do\nCalmante',
-    message: 'Quando o caos aparece, você ainda de pé. Isso é raro.',
+    name:    'Flor do\nCalma',
+    message: 'Às vezes eu não entendo por que tu se cobra tanto... sendo que do teu jeito, tu sempre emcontra um caminho e faz dar certo, com ou sem esforço máximo. Tenta pegar mais leve contigo mesma e se permitir respirar um pouco.',
     p: '#9333ea', d: '#4c0094', l: '#d8b4fe'
   },
   {
