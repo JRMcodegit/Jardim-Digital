@@ -52,7 +52,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor da\nAdmiração',
-    message: 'Seus olhos guardam coisas que nem você percebe.',
+    message: 'Dizer que te admiro parece pouco. Eu sempre te vejo indo de la pra ca sacrificando o tempo que podia dedicar pra cuidar de ti mesma, sempre ocupada por conta de alguma tarefa, sempre chegando cansada em casa... Eu percebo toda a tua dedicação, isso me faz enxergar o quanto tu ainda pode brilhar. E eu vou observar esse brilho o máximo que puder, mesmo que meus olhos queimem com a intensidade. Eu não só te admiro, tenho orgulho do que tu é e de tudo que ainda vai ser.',
     p: '#a21caf', d: '#4a044e', l: '#e879f9'
   },
   {
