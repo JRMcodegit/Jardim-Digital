@@ -7,12 +7,12 @@
   "theme_color": "#060e1f",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "rose_1f339.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "rose_1f339.png",
       "sizes": "512x512",
       "type": "image/png"
     }
