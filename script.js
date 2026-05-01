@@ -57,13 +57,13 @@ const FLOWERS = [
   },
   {
     name:    'Flor\nda Bomba',
-    message: 'e o dólar em... lá vem bomba 💣',
+    message: 'Tu querendo ou não, eu nunca vou deixar te amar daquela mesma forma que sempre expressei. Espero que entenda que isso nunca vai mudar',
     p: '#1e1b4b', d: '#0d0b2a', l: '#818cf8',
     special: true
   },
   {
-    name:    'Flor\ndos 11',
-    message: '11 meses. Cada um deles valeu.',
+    name:    'Flor\nda Gracinha',
+    message: 'Oque tem 5 bocas mas não come? 5 africanos.',
     p: '#c026d3', d: '#701a75', l: '#f0abfc'
   }
 ];
