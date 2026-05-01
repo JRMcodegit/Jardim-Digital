@@ -47,7 +47,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor\ndo Tempo',
-    message: 'Cada chamada, cada jogatina, ficou guardada aqui.',
+    message: 'Nas nossas conversas, chamadas e jogatinas, eu sempre me sinto perdido no tempo. Os momentos contigo parecem passar em um piscar de olhos. Mas isso me deixa feliz, porque assim percebo que amo cada segundo do meu tempo contigo.',
     p: '#dc2626', d: '#7f1d1d', l: '#fca5a5'
   },
   {
