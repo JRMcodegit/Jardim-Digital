@@ -22,7 +22,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor\nda Paz',
-    message: 'Só saber que você tá bem já deixa o dia melhor.',
+    message: 'Quando as coisas pesarem e tu não estiver bem, não precisa se fechar nem se afastar do mundo. Me chama, me deixa estar aí com contigo. Às vezes dividir esse momento difícil comigo pode te deixar um pouco mais leve. Estar do teu lado, mesmo que só em uma ligação, já me faz sentir uma conexão mais forte. Saber que tu está bem é o que me traz paz.',
     p: '#ec4899', d: '#9d174d', l: '#fbcfe8'
   },
   {
