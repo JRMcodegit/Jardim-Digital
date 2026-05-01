@@ -96,8 +96,6 @@ const bgAudio       = document.getElementById('bg-audio');
    STATE
 ────────────────────────────────────────────────────────── */
 let openedCount = 0;
-let lastFocusedElement = null;
-let finalShown = false;
 
 /* ──────────────────────────────────────────────────────────
    STARS (canvas-based for performance)
@@ -249,42 +247,35 @@ function revealFlowers() {
    MODAL
 ────────────────────────────────────────────────────────── */
 function openModal(idx) {
-  lastFocusedElement = document.activeElement;
-
   const f = FLOWERS[idx];
 
+  // Rebuild SVG fresh (resets its spin animation)
   modalRoseWrap.innerHTML = makeRoseSVG(f.p, f.d, f.l, 'modal');
-  modalName.textContent = f.name.replace('\n', ' ');
+  modalName.textContent    = f.name.replace('\n', ' ');
   modalMessage.textContent = f.message;
 
   modal.classList.add('open');
   modal.setAttribute('aria-hidden', 'false');
-  document.body.dataset.modalOpen = 'true';
 
+  // Mark card as opened
   const card = flowersGrid.querySelector(`[data-idx="${idx}"]`);
-
   if (!card.classList.contains('opened')) {
     card.classList.add('opened');
     openedCount++;
     flowerCounter.textContent = `${openedCount} / ${FLOWERS.length}`;
 
-    if (openedCount === FLOWERS.length && !finalShown) {
-      finalShown = true;
+    if (openedCount === FLOWERS.length) {
       setTimeout(showFinalMessage, 900);
     }
   }
 
+  // Focus trap
   modalClose.focus();
 }
 
 function closeModal() {
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden', 'true');
-  document.body.dataset.modalOpen = 'false';
-
-  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-    lastFocusedElement.focus();
-  }
 }
 
 /* ──────────────────────────────────────────────────────────
