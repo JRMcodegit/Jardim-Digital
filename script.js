@@ -27,7 +27,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor da\nSegurança',
-    message: 'Você inspira as pessoas ao redor sem perceber.',
+    message: 'Me faz um favor que eu vou carregar pra sempre? Quando algo te fizer duvidar do teu valor, lembra de mim… lembra que a tua presença é o que me dá chão firme. É ela que me deixa seguro, que me traz mais coragem e que me enche de confiança pra seguir na minha jornada. Principalmente agora com tantas obrigações e responsabilidades chegando na minha vida.',
     p: '#b91c1c', d: '#6b0000', l: '#fca5a5'
   },
   {
