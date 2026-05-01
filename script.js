@@ -32,7 +32,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor\ndo Apoio',
-    message: 'Contar com você é fácil. E isso vale mais do que parece.',
+    message: 'Não precisa carregar tudo sozinha e não precisa guardar teus problemas só pra ti. Eu tô aqui contigo, mesmo que de longe. Não me importo em virar a noite só pra te ouvir, pra ler cada palavra tua, pra estar presente quando tu precisar. Mesmo quando o sono chega eu fico mais um tempo acordado, porque talvez tu precise de alguém naquele momento. Pode contar comigo pra te escutar, te acolher e te apoiar em tudo, sem julgamento. (só uns esporros de vez em quando)',
     p: '#be185d', d: '#6f0035', l: '#fbcfe8'
   },
   {
