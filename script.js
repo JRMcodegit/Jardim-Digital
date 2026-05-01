@@ -12,7 +12,7 @@
 const FLOWERS = [
   {
     name:    'Flor do\nCarinho',
-    message: 'Tudo que você é, sem tentar, já é muito.',
+    message: 'Confesso que não comprei os presentes só porque queria te deixar feliz... Comprei também pra que tu sempre carregue uma parte simbólica de mim contigo, pra te lembrar que não ta sozinha. Assim posso estar contigo em todos os lugares.',
     p: '#d63384', d: '#7a0034', l: '#f9a8c9'
   },
   {
