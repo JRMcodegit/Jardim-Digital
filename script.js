@@ -42,7 +42,7 @@ const FLOWERS = [
   },
   {
     name:    'Flor\nda Leveza',
-    message: 'Você torna tudo mais leve quando aparece. Sem esforço.',
+    message: 'Quando me chamou pra conversar ontem na madrugada, naquela conversa eu me senti mais leve. Me senti dessa forma porque tu se abriu comigo, porque tu me deixou tentar te ajudar. Posso não ser qualificado pra aconselhar como um psicólogo, mas talvez possa te escutar melhor que um. (Minhas sessões são gratuitas)',
     p: '#e11d48', d: '#9f1239', l: '#fda4af'
   },
   {
