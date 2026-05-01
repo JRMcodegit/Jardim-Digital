@@ -96,6 +96,8 @@ const bgAudio       = document.getElementById('bg-audio');
    STATE
 ────────────────────────────────────────────────────────── */
 let openedCount = 0;
+let lastFocusedElement = null;
+let finalShown = false;
 
 /* ──────────────────────────────────────────────────────────
    STARS (canvas-based for performance)
